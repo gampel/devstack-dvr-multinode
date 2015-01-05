@@ -26,9 +26,9 @@ On the controller Node
     l2_population = True
     enable_distributed_routing = True
 
-I modified the following configuration  On the Compute  Node after running  ./stack 
+I modified the following configuration  On all the Compute  Node after running  ./stack 
 
-On the compute nodes 
+ 
 
 * l3_agent.ini 
   agent_mode = dvr
@@ -40,7 +40,9 @@ On the compute nodes
   mechanism_drivers =openvswitch,l2population
   
   [agent]
+  
     l2_population = True
+  
     enable_distributed_routing = True
 
 
