@@ -10,14 +10,17 @@ I modified the following configuration  On the controller Node after running  ./
 
 On the controller Node 
 * Neutron.conf 
-  router_distributed = True
+  
+    router_distributed = True
 
 * l3_agent.ini 
-  agent_mode = dvr_snat
- router_delete_namespaces = True
+
+    agent_mode = dvr_snat
+    router_delete_namespaces = True
 
 * ml2_conf.ini 
-  mechanism_drivers =openvswitch,l2population
+  
+    mechanism_drivers =openvswitch,l2population
   [agent]
 
     l2_population = True
@@ -33,9 +36,11 @@ On the compute nodes
 
 
 * ml2_conf.ini 
-mechanism_drivers =openvswitch,l2population
-[agent]
-l2_population = True
-enable_distributed_routing = True
+
+  mechanism_drivers =openvswitch,l2population
+  
+  [agent]
+    l2_population = True
+    enable_distributed_routing = True
 
 
