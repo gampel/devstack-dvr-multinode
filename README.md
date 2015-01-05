@@ -17,16 +17,20 @@ On the controller Node
  router_delete_namespaces = True
 
 * ml2_conf.ini 
-mechanism_drivers =openvswitch,l2population
-[agent]
-l2_population = True
-enable_distributed_routing = True
+  mechanism_drivers =openvswitch,l2population
+  [agent]
+
+    l2_population = True
+    enable_distributed_routing = True
+
 I modified the following configuration  On the Compute  Node after running  ./stack 
 
 On the compute nodes 
+
 * l3_agent.ini 
   agent_mode = dvr
   router_delete_namespaces = True
+
 
 * ml2_conf.ini 
 mechanism_drivers =openvswitch,l2population
