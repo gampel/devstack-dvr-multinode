@@ -12,7 +12,8 @@ On the controller Node
 * Neutron.conf 
   
     router_distributed = True
-
+    dvr_base_mac = fa:16:3f:00:00:00
+    
 * l3_agent.ini 
 
     agent_mode = dvr_snat
@@ -20,11 +21,13 @@ On the controller Node
 
 * ml2_conf.ini 
   
+  [ml2]
     mechanism_drivers =openvswitch,l2population
+  
   [agent]
-
     l2_population = True
     enable_distributed_routing = True
+    arp_responder = True
 
 I modified the following configuration  On all the Compute  Node after running  ./stack 
 
