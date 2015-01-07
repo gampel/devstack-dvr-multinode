@@ -17,13 +17,15 @@ git clone https://git.openstack.org/openstack-dev/devstack
 3) Copy the appropriate  local.conf file controller/compute and modified it to match your host ip setup.
 
 clone this repository 
+
   cd /opt/stack 
   git clone https://github.com/gampel/devstack-dvr-multinode.git
   cd git clone https://github.com/gampel/devstack-dvr-multinode.git
   cd devstack-dvr-multinode
   
 On the controller node 
-  cp cocp controller-node/local.confntroller-node/local.conf /opt/stack/devstack 
+
+  cp controller-node/local.confntroller-node/local.conf /opt/stack/devstack 
 
 On the computes nodes 
   cp controller-node/local.conf  /opt/stack/devstack 
