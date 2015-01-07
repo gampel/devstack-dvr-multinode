@@ -1,12 +1,38 @@
 devstack-dvr-multinode
 ======================
-The folwing is the setup i used for the blog post series about Openstack Juno DVR. 
+I used the following  OpenStack setup for the blog post series about Openstack Juno DVR. 
 
 http://blog.gampel.net/2014_12_14_archive.html
 
 In my setup all the controller services and the network services ran on one machine.
 
-I modified the following configuration  On the controller Node after running  ./stack 
+1) Clone the devstack into the  controller node and into all the compute nodes 
+
+git clone https://git.openstack.org/openstack-dev/devstack
+2) Checkout the stable Juno relase  
+
+  cd devstack 
+  git checkout stable/juno 
+
+3) Copy the appropriate  local.conf file controller/compute and modified it to match your host ip setup.
+
+clone this repository 
+  cd /opt/stack 
+  git clone https://github.com/gampel/devstack-dvr-multinode.git
+  cd git clone https://github.com/gampel/devstack-dvr-multinode.git
+  cd devstack-dvr-multinode
+  
+On the controller node 
+  cp cocp controller-node/local.confntroller-node/local.conf /opt/stack/devstack 
+
+On the computes nodes 
+  cp controller-node/local.conf  /opt/stack/devstack 
+
+4) Run stack.sh
+
+5) Update the neurton configuration   to DVR mode 
+
+I modified the following configuration On the controller Node  
 
 On the controller Node 
 * Neutron.conf 
@@ -29,7 +55,7 @@ On the controller Node
     enable_distributed_routing = True
     arp_responder = True
 
-I modified the following configuration  On all the Compute  Node after running  ./stack 
+I modified the following configuration  On all the Compute  Node 
 
  
 
