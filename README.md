@@ -9,6 +9,7 @@ In my setup all the controller services and the network services ran on one mach
 1) Clone the devstack into the  controller node and into all the compute nodes 
 
 git clone https://git.openstack.org/openstack-dev/devstack
+
 2) Checkout the stable Juno relase  
 
   cd devstack 
@@ -28,6 +29,7 @@ On the controller node
   cp controller-node/local.confntroller-node/local.conf /opt/stack/devstack 
 
 On the computes nodes 
+
   cp controller-node/local.conf  /opt/stack/devstack 
 
 4) Run stack.sh
