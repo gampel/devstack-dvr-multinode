@@ -40,7 +40,19 @@ On the computes nodes
 
 4) Run stack.sh
 
-5) Update the neurton configuration   to DVR mode 
+5) Set up the external bridge 
+
+Assuming  the external network is connected to eth3 
+
+ifconfig br-ex promisc up
+ifconfig eth3 0.0.0.0
+ifconfig eth3 promisc 
+
+ifconfig br-ex <address on ext>  netmask <mask>
+
+ovs-vsctl add-port br-ex eth3
+
+6) Update the neurton configuration   to DVR mode 
 
 I modified the following configuration On the controller Node  
 
