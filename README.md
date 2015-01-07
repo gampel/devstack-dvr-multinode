@@ -7,7 +7,7 @@ http://blog.gampel.net/2014_12_14_archive.html
 In my setup all the controller services and the network services ran on one machine.
 
 1) Clone the devstack into the  controller node and into all the compute nodes 
-
+    cd /opt/stack
     git clone https://git.openstack.org/openstack-dev/devstack
 
 2) Checkout the stable Juno relase  
