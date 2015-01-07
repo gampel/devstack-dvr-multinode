@@ -2,11 +2,11 @@ devstack-dvr-multinode
 ======================
 I used the following  OpenStack setup for the blog post series about Openstack Juno DVR. 
 
-East-West: http://blog.gampel.net/2014_12_14_archive.html
+East-West:          http://blog.gampel.net/2014_12_14_archive.html
 
 DNAT- Floating IPs: http://blog.gampel.net/2014/12/openstack-dvr2-floating-ips.html
 
-SNAT- http://blog.gampel.net/2015/01/openstack-DVR-SNAT.html
+SNAT-               http://blog.gampel.net/2015/01/openstack-DVR-SNAT.html
 
 In my setup all the controller services and the network services ran on one machine.
 
