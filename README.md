@@ -48,9 +48,8 @@ Assuming  the external network is connected to eth3
         ifconfig eth3 0.0.0.0
         ifconfig eth3 promisc 
         ifconfig br-ex <address on ext>  netmask <mask>
-
-ovs-vsctl add-port br-ex eth3
-
+        ovs-vsctl add-port br-ex eth3
+        
 6) Update the neurton configuration   to DVR mode 
 
 I modified the following configuration On the controller Node  
@@ -96,3 +95,5 @@ I modified the following configuration  On all the Compute  Node
     enable_distributed_routing = True
 
 
+7) For the floating ip association I used the neutron command line due to horizon bug
+        neutron  floatingip-associate           Create a mapping between a floating IP and a fixed IP.
