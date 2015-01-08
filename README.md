@@ -95,5 +95,6 @@ I modified the following configuration  On all the Compute  Node
     enable_distributed_routing = True
 
 
-7) For the floating ip association I used the neutron command line due to horizon bug
-        neutron  floatingip-associate           Create a mapping between a floating IP and a fixed IP.
+7) For the floating ip association I used the neutron command line due to the horizon bug associating FIP 
+
+            neutron  floatingip-associate           Create a mapping between a floating IP and a fixed IP.
