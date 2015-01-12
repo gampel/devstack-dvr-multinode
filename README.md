@@ -32,7 +32,7 @@ clone this repository
   
 On the controller node 
 
-    cp controller-node/local.confntroller-node/local.conf /opt/stack/devstack 
+    cp controller-node/local.conf  /opt/stack/devstack 
 
 On the computes nodes 
 
