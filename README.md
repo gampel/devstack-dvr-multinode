@@ -72,8 +72,11 @@ On the controller Node
   
   [agent]
     l2_population = True
+
     enable_distributed_routing = True
+    
     arp_responder = True
+    
 
 I modified the following configuration  On all the Compute  Node 
 
