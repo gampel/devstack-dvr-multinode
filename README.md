@@ -68,9 +68,11 @@ On the controller Node
 * ml2_conf.ini 
   
   [ml2]
+
     mechanism_drivers =openvswitch,l2population
   
   [agent]
+
     l2_population = True
 
     enable_distributed_routing = True
