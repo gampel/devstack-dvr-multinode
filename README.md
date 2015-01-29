@@ -58,11 +58,13 @@ On the controller Node
 * Neutron.conf 
   
     router_distributed = True
+
     dvr_base_mac = fa:16:3f:00:00:00
     
 * l3_agent.ini 
 
     agent_mode = dvr_snat
+    
     router_delete_namespaces = True
 
 * ml2_conf.ini 
@@ -86,6 +88,7 @@ I modified the following configuration  On all the Compute  Node
 
 * l3_agent.ini 
   agent_mode = dvr
+
   router_delete_namespaces = True
 
 
