@@ -34,11 +34,32 @@ On the controller node
 
     cp controller-node/local.conf  /opt/stack/devstack 
 
-On the computes nodes 
+On the compute nodes 
 
-    cp controller-node/local.conf  /opt/stack/devstack 
+    cp compute-nodes/local.conf  /opt/stack/devstack 
 
-4) Run stack.sh
+Edit the local.conf file to match your setup
+
+    vi /opt/stack/devstack/local.conf
+
+Modify the following values (where applicable):
+
+    HOST_IP <- The management IP address of the current node
+    FIXED_RANGE <- The overlay network address and mask
+    FIXED_NETWORK_SIZE <- Size of the overlay network
+    NETWORK_GATEWAY <- Default gateway for the overlay netowrk
+    FLOATING_RANGE <- Network address and range for Floating IP addresses (in the public network)
+    Q_FLOATING_ALLOCATION_POOL <- range to allow allocation of floating IP from (within FLOATING_RANGE)
+    PUBLIC_NETWORK_GATEWAY <- Default gateway for the public network
+    SERVICE_HOST <- Management IP address of the controller node
+    MYSQL_HOST <- Management IP address of the controller node
+    RABBIT_HOST <- Management IP address of the controller node
+    GLANCE_HOSTPORT <- Management IP address of the controller node (Leave the port as-is)
+
+4) Run stack.sh (Make sure to complete on the controller before compute nodes)
+
+    cd /opt/stack/devstack
+    ./stack.sh
 
 5) Set up the external bridge 
 
@@ -49,6 +70,8 @@ Assuming  the external network is connected to eth3
         ifconfig eth3 promisc 
         ifconfig br-ex <address on ext>  netmask <mask>
         ovs-vsctl add-port br-ex eth3
+
+Re-add the default route if needed
         
 6) Update the neurton configuration   to DVR mode 
 
