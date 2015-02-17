@@ -77,20 +77,19 @@ Re-add the default route if needed
 
 I modified the following configuration On the controller Node  
 
-On the controller Node 
-* Neutron.conf 
+* /etc/neutron/neutron.conf 
   
     router_distributed = True
 
     dvr_base_mac = fa:16:3f:00:00:00
     
-* l3_agent.ini 
+* /etc/neutron/l3_agent.ini 
 
     agent_mode = dvr_snat
     
     router_delete_namespaces = True
 
-* ml2_conf.ini 
+* /etc/neutron/plugins/ml2/ml2_conf.ini
   
   [ml2]
 
@@ -105,19 +104,21 @@ On the controller Node
     arp_responder = True
     
 
+
 I modified the following configuration  On all the Compute  Node 
 
- 
+* /etc/neutron/l3_agent.ini 
 
-* l3_agent.ini 
   agent_mode = dvr
 
   router_delete_namespaces = True
 
 
-* ml2_conf.ini 
+* /etc/neutron/plugins/ml2/ml2_conf.ini 
 
-  mechanism_drivers =openvswitch,l2population
+  [ml2]
+
+    mechanism_drivers = openvswitch,l2population
   
   [agent]
   
@@ -128,4 +129,6 @@ I modified the following configuration  On all the Compute  Node
 
 7) For the floating ip association I used the neutron command line due to the horizon bug associating FIP 
 
-            neutron  floatingip-associate           Create a mapping between a floating IP and a fixed IP.
+    neutron  floatingip-associate
+
+Which creates a mapping between a floating IP and a fixed IP.
